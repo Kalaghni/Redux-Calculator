@@ -65,6 +65,7 @@
   max-width: 278px;
   overflow: hidden;
   min-height: 21px;
+  max-height: 21px;
   padding: 25px 0;
   font-size: large;
   color: #a8ff57;
