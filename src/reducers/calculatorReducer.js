@@ -1,6 +1,14 @@
 import { evaluate, sqrt } from "mathjs";
 
 const calculatorReducer = (state = "", action) => {
+    var element = document.getElementById('mainscreen');
+    try {
+        element.classList.remove("error");
+    }
+    catch {
+
+    }
+   
     switch(action.type) {
         case "APPEND_NUM":
             return state + action.char.toString();
@@ -20,14 +28,29 @@ const calculatorReducer = (state = "", action) => {
                     return evaluate(state);
                 }
                 else {
+                    element.classList.add("error");
                     return state;
                 }
             }
             catch {
+                element.classList.add("error");
                 return state;
             }
         case "SQRT":
-            return sqrt(parseFloat(state));
+            try {
+                let result = sqrt(parseFloat(state));
+                if (!isNaN(result)) {
+                    return result;
+                }
+                else {
+                    element.classList.add("error");
+                    return state;
+                }
+            }
+            catch {
+                element.classList.add("error");
+                return state;
+            }
         case "CLEAR":
             return "";
         case "NEGATIVE":
@@ -37,12 +60,16 @@ const calculatorReducer = (state = "", action) => {
                     return result * -1;
                 }
                 else {
+                    element.classList.add("error");
                     return state;
                 }
             }
             catch {
+                element.classList.add("error");
                 return state;
             }
+        case "DECIMAL":
+            return state + ".";
         default:
             return state;
     }

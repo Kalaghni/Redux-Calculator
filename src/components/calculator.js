@@ -8,6 +8,7 @@ import { ClearButton } from './clearButton';
 import { SymbolButton } from './symbolButton';
 import { NegativeButton } from './negativeButton';
 import { PowerButton } from './powerButton';
+import { DecimalButton } from './decimalButton';
 
 class Calculator extends Component {
 
@@ -49,13 +50,16 @@ class Calculator extends Component {
                             <td><NumberButton name="8"/></td>
                             <td><NumberButton name="9"/></td>
                             <td>&ensp;</td>
-                            <td rowSpan={2} colSpan={2}></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td><BackButton/></td>
                             <td><NumberButton name="0"/></td>
-                            <td><EqualsButton/></td>
+                            <td><DecimalButton/></td>
                             <td>&ensp;</td>
+                            <td><EqualsButton/></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>

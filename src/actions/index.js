@@ -41,3 +41,9 @@ export const appendNum = (x) => {
         type: "NEGATIVE"
     }
   }
+
+  export const decimal = () => {
+    return {
+      type: "DECIMAL"
+    }
+  }

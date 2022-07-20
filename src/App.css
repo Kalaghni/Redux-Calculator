@@ -62,7 +62,7 @@
 
 .main-screen {
   background-color: rgb(0, 0, 0);
-  width: 278px;
+  max-width: 278px;
   overflow: scroll;
   min-height: 21px;
   padding: 25px 0;
@@ -90,4 +90,18 @@
   background-color: #f4f4f4;
   padding: 25px;
   border-radius: 4px;
+}
+
+.error
+  {
+    position: relative;
+    animation: shake 0.2s ease-in-out 0s 2;
+    box-shadow: 0 0 0.5em red;
+  }
+
+@keyframes shake {
+  0% { margin-left: 0rem; }
+  25% { margin-left: 0.5rem; }
+  75% { margin-left: -0.5rem; }
+  100% { margin-left: 0rem; }
 }

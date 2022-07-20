@@ -3,7 +3,7 @@ import reduxLogo from './redux.png';
 import './App.css';
 import Calculator from './components/calculator';
 import {useDispatch} from "react-redux";
-import {appendSymbol, appendNum, back, equals, clear} from "./actions";
+import {appendSymbol, appendNum, back, equals, clear, decimal} from "./actions";
 
 function App() {
 
@@ -18,6 +18,9 @@ function App() {
     }
     else if (event.key.toLowerCase() === "x") {
       dispatch(appendSymbol("*"));
+    }
+    else if (event.key === ".") {
+      dispatch(decimal());
     }
     else if (event.keyCode === 8) {
       dispatch(back());
